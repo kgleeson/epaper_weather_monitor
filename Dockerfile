@@ -6,7 +6,16 @@ RUN pip install --user -r requirements.txt
 
 FROM python:3.8-slim
 
-RUN apt-get update ; apt-get install -y cron libfreetype6; apt-get clean
+RUN apt-get update ; \
+     apt-get install --no-install-recommends -y \
+     cron \
+     libfreetype6 \
+     libxft-dev \
+     libjpeg62 \
+     libopenjp2-7 \
+     libtiff5 \
+     libxcb1 ; \
+     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /code
 
