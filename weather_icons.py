@@ -195,6 +195,6 @@ night_weather_icons = {
 
 def get_weather_icon(icon, timeofday='day'):
     if timeofday == 'night':
-        return chr(int(night_weather_icons.get(str(icon))))
+        return chr(int(night_weather_icons.get(str(icon), weather_icons.get(icon))))
     else:
         return chr(int(weather_icons.get(str(icon))))
