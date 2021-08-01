@@ -16,6 +16,7 @@ images_dir = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'images')
 from waveshare_epd import epd7in5_V2
 
 weather_data = get_weather()
+logging.debug(weather_data)
 
 epd = epd7in5_V2.EPD()
 
@@ -59,6 +60,10 @@ def draw_today_info():
     icon_x = 15
     text_x = 65
 
+    if datetime.now() > weather_data['sunset'] or datetime.now() < weather_data['sunrise']:
+        timeofday = 'night'
+    else:
+        timeofday = 'day'
     lines = [
         ('thermometer', f"{weather_data['temp_min']}-{weather_data['temp_max']}"),
         ('wind', f"{weather_data['wind']}"),
@@ -68,7 +73,7 @@ def draw_today_info():
 
     for i, line in enumerate(lines):
         line_offset = i*font_size
-        draw_symbol(icon_x, line_y+line_offset, get_weather_icon(line[0]))
+        draw_symbol(icon_x, line_y+line_offset, get_weather_icon(line[0], timeofday))
         draw_text(text_x, line_y+line_offset+5, line[1])
         if len(line) > 2:
             draw_symbol(icon_x+160, line_y+line_offset, get_weather_icon(line[2]))
