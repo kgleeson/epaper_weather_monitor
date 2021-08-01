@@ -18,3 +18,6 @@ jobs:
 
       - name: Build image
         run: docker buildx build --platform linux/arm/v6,linux/arm64 -t ghcr.io/kgleeson/epaper_weather_monitor:latest --push .
+        
+      - name: Deploy to target
+        run: ssh ${{ secrets.DEPLOY_TARGET }} ${{ secrets.DEPLOY_COMMAND }}
