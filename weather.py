@@ -18,7 +18,7 @@ def get_weather():
     latitude = os.environ['latitude']
     longitude = os.environ['longitude']
     units = os.environ.get('units', 'metric')
-    speed_unit = {'metric': 'KMH', 'imperial': 'MPH'}
+    speed_unit = {'metric': 'km/h', 'imperial': 'mph'}
     temp_unit = {'metric': '\N{DEGREE SIGN}C', 'imperial': '\N{DEGREE SIGN}F'}
 
     url = f'http://api.openweathermap.org/data/2.5/onecall?lat={latitude}&lon={longitude}&units={units}&appid={api_key}'
