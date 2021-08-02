@@ -48,9 +48,9 @@ def draw_symbol(x, y, text, font_size=50, fill='rgb(0,0,0)'):
 
 
 def draw_main_weather():
-    y_pos = 15
-    font_size = 160
-    draw_symbol(15, y_pos-20, weather_data['icon_code'], font_size)
+    y_pos = 5
+    font_size = 180
+    draw_symbol(5, y_pos-20, weather_data['icon_code'], font_size)
     draw_text(260, y_pos, weather_data['temp_current'], font_size)
 
 
