@@ -51,7 +51,7 @@ def draw_main_weather():
     y_pos = -15
     font_size = 180
     draw_symbol(10, y_pos, weather_data['icon_code'], font_size)
-    draw_text(260, y_pos, weather_data['temp_current'], font_size)
+    draw_text(240, y_pos, weather_data['temp_current'], font_size)
 
 
 def draw_today_info():
@@ -73,11 +73,12 @@ def draw_today_info():
 
     for i, line in enumerate(lines):
         line_offset = i*font_size
+        text_offset = 5
         draw_symbol(icon_x, line_y+line_offset, get_weather_icon(line[0], timeofday))
-        draw_text(text_x, line_y+line_offset+5, line[1])
+        draw_text(text_x, line_y+line_offset+text_offset, line[1])
         if len(line) > 2:
             draw_symbol(icon_x+160, line_y+line_offset, get_weather_icon(line[2]))
-            draw_text(text_x+165, line_y+line_offset, line[3])
+            draw_text(text_x+165, line_y+line_offset+text_offset, line[3])
 
 
 def draw_next_days():
