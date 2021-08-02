@@ -1,4 +1,4 @@
-weather_icons = {
+night_weather_icons = {
     '200': 0xf010,
     '201': 0xf010,
     '202': 0xf010,
@@ -121,14 +121,10 @@ weather_icons = {
     '905': 0xf021,
     '906': 0xf024,
     '957': 0xf050,
-    'thermometer': 0xf055,
-    'barometer': 0xf079,
-    'humidity' : 0xf07a,
-    'rain': 0xf084,
-    'wind': 0xf057
 }
 
-night_weather_icons = {
+
+weather_icons = {
     '200': 0xf01e,
     '201': 0xf01e,
     '202': 0xf01e,
@@ -190,6 +186,11 @@ night_weather_icons = {
     '905': 0xf021,
     '906': 0xf015,
     '957': 0xf050,
+    'thermometer': 0xf055,
+    'barometer': 0xf079,
+    'humidity' : 0xf07a,
+    'rain': 0xf084,
+    'wind': 0xf057
 }
 
 
