@@ -56,7 +56,7 @@ def draw_main_weather():
 
 def draw_today_info():
     font_size = 50
-    line_y = 200
+    line_y = 210
     icon_x = 15
     text_x = 65
 
