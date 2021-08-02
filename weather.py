@@ -27,7 +27,7 @@ def get_weather():
         next_day_dict = {
             'date': datetime.fromtimestamp(day_data['dt']).strftime("%d/%m"),
             'icon_code': get_weather_icon(day_data['weather'][0]['id']),
-            'temp_max': f"{day_data['temp']['max']:.0f}{temp_unit[units]}",
+            'temp_max': f"{day_data['temp']['max']:.0f}",
             'temp_min': f"{day_data['temp']['min']:.0f}",
             'rain_percent': f"{day_data['pop'] * 100:.0f}%",
         }
