@@ -87,9 +87,9 @@ def draw_next_days():
     for i in range(1, 4):
         x_padding = 140*(i-1)
         day_weather = weather_data[f'day_{i}']
-        draw_text(x_pos+x_padding+10, y_pos, day_weather['date'], font_size-10)
+        draw_text(x_pos+x_padding+20, y_pos, day_weather['date'], font_size-10)
         draw_symbol(x_pos+x_padding+30, y_pos+font_size-20, day_weather['icon_code'], font_size+10)
-        draw_text(x_pos+x_padding+5, y_pos+(font_size*2), f"{day_weather['temp_min']}-{day_weather['temp_max']}", font_size)
+        draw_text(x_pos+x_padding+10, y_pos+(font_size*2), f"{day_weather['temp_min']}-{day_weather['temp_max']}", font_size)
         draw_symbol(x_pos+x_padding, y_pos+(font_size*3), get_weather_icon('rain'), font_size)
         draw_text(x_pos+x_padding+45, y_pos+(font_size*3)+10, day_weather['rain_percent'], font_size)
 
